@@ -1,37 +1,11 @@
-# 🧩 AI Project Template
+🚀 Results Summary
 
-A reusable, professional template for ML/AI projects. Clone or use as a GitHub _Template_ to start new projects quickly.
+Multiple gradient boosting algorithms were tested to predict EV charging energy consumption using session, site, and time-based features.
 
-## 📁 Structure
-```
-ai-project-template/
-├── data/            # raw & processed data (kept out of git via .gitignore rules)
-├── models/          # saved models, checkpoints
-├── notebooks/       # Jupyter notebooks
-├── scripts/         # CLI utilities (train/evaluate/etc.)
-├── src/             # reusable modules (feature_eng.py, model.py, etc.)
-├── requirements.txt # project deps
-├── .gitignore
-├── setup_venv.sh    # Linux/macOS setup
-├── setup_venv.ps1   # Windows PowerShell setup
-└── README.md
-```
+CatBoost achieved the best performance with an R² = 0.756, MAE = 5.61 kWh, and RMSE = 7.95 kWh on the test set.
 
-## 🚀 Quick start
-**Linux/macOS (or Ubuntu):**
-```bash
-bash setup_venv.sh
-# then
-jupyter notebook
-```
-**Windows PowerShell:**
-```powershell
-.\setup_venv.ps1
-# then
-jupyter notebook
-```
+The model accurately captures daily and station-level demand variations, providing valuable insight for operational planning and load forecasting of public EV infrastructure.
 
-## ✍️ Notes
-- The virtual environment (`.venv/`) is **not** committed to git.
-- Update `requirements.txt` as you add libs: `pip freeze --exclude-editable > requirements.txt`.
-- Register your kernel once per project so notebooks pick the right env.
+LightGBM and XGBoost achieved comparable results but required more preprocessing for categorical features.
+
+Overall, the project demonstrates a robust end-to-end ML workflow for energy demand forecasting using real-world EV charging data.
